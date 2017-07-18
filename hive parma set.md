@@ -50,7 +50,7 @@ hive.exec.mode.local.auto.inputbytes.max --默认256
 ```
 ### JVM重用
 ```
-mapred.job.reuse.jvm.num.tasks
+mapred.job.reuse.jvm.num.tasks --设置jvm重用的次数，减少启动时间
 ```
 ### 数据倾斜
 
