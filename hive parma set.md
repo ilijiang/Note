@@ -53,4 +53,19 @@ hive.exec.mode.local.auto.inputbytes.max --默认256
 mapred.job.reuse.jvm.num.tasks --设置jvm重用的次数，减少启动时间
 ```
 ### 数据倾斜
-
+| 关键词          | 情形                                 | 后果 |
+|:--------------:| ----------------------------------- | --- |
+| join           | 其中一个小表key值集中                  | 分发到某个或多个reduce上的数据远高于平均值 |
+| join           | 大表与大表关联，但是关联key0值或者空值过多 | 一个reduce处理数据量过大，非常慢 |
+| group by       | groupby某些key值数据量过多 | 处理某些值的reduce非常耗时 |
+| count distinct | groupby某些key值数据量过多 | 某个reduce处理数据量过大，非常耗时
+```
+set hive.map.aggr = true
+```
+``` 
+/*改写前*/
+select a, count(distinct b) as c from tbl group by a;
+/*改写后*/
+select a, count(*) as c 
+from (select distinct a, b from tbl) group by a; 
+```
