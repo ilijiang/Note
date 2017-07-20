@@ -69,8 +69,11 @@ mapred.job.reuse.jvm.num.tasks --设置jvm重用的次数，减少启动时间
 2. 大大表join,优化方案：
     1. 如果key值空值或者特殊值较多，可以通过随机函数处理空值或特殊值
     ```
-    case when key is null then cast(rand(2017) as int)
-         else key end
+    select
+        ...
+        case when key is null then cast(rand(2017) as int)
+             else key end
+        ...
     ```
     2. 如果key值都是有效的，可以通过参数1设置每个reduce处理的数据大小，或者通过参数2设置reduce任务数。
     ```
@@ -80,7 +83,8 @@ mapred.job.reuse.jvm.num.tasks --设置jvm重用的次数，减少启动时间
     set mapred.reduce.tasks = 800
     ```
 3. groupby的数据倾斜，优化方案：
-    启用map端combiner，假如map各条数据基本上不一样，combiner没有什么意义，可以设置先取100000条进行聚合，如果聚合后的数据量/100000 = 0.5则不进行combiner;或者通过设置参数2控制生成2个MR job,第一个MR Job Map的输出结果随机分配到reduce做次预汇总,减少某些key值条数过多某些key条数过小造成的数据倾斜问题.
+    启用map端combiner,注：hive可以设置参数1.2和1.3，预先取100000条进行聚合，如果聚合后的数据量/100000 = 0.5，则不进行combiner;
+    但是假如map各条数据基本上不一样，可以通过设置 参数2 控制生成2个MR job,第一个MR Job Map的输出结果随机分配到reduce做次预汇总,减少某些key值条数过多某些key条数过小造成的数据倾斜问题.
     ```
     set hive.map.aggr = true
     set hive.groupby.mapaggr.checkinterval = 100000（默认）
