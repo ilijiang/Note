@@ -83,8 +83,7 @@ mapred.job.reuse.jvm.num.tasks --设置jvm重用的次数，减少启动时间
     set mapred.reduce.tasks = 800
     ```
 3. groupby的数据倾斜，优化方案：
-    启用map端combiner,注：hive可以设置参数1.2和1.3，预先取100000条进行聚合，如果聚合后的数据量/100000 = 0.5，则不进行combiner;
-    但是假如map各条数据基本上不一样，可以通过设置 参数2 控制生成2个MR job,第一个MR Job Map的输出结果随机分配到reduce做次预汇总,减少某些key值条数过多某些key条数过小造成的数据倾斜问题.
+    启用map端combiner,注：假如map各条数据基本上不一样，hive可以设置参数1.2和1.3，预先取100000条进行聚合，如果聚合后的数据量/100000 = 0.5，则不进行combiner;可以通过设置 参数2 控制生成2个MR job,第一个MR Job Map的输出结果随机分配到reduce做次预汇总,减少某些key值条数过多某些key条数过小造成的数据倾斜问题.
     ```
     set hive.map.aggr = true
     set hive.groupby.mapaggr.checkinterval = 100000（默认）
