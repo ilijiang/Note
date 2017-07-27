@@ -1,5 +1,22 @@
 # hive-note
 
+## hive fetch task conversion
+```
+<property>
+  <name>hive.fetch.task.conversion</name>
+  <value>minimal</value>
+  <description>
+    Some select queries can be converted to single FETCH task
+    minimizing latency.Currently the query should be single
+    sourced not having any subquery and should not have
+    any aggregations or distincts (which incurrs RS),
+    lateral views and joins.
+    1. minimal : SELECT STAR, FILTER on partition columns, LIMIT only
+    2. more    : SELECT, FILTER, LIMIT only (+TABLESAMPLE, virtual columns)
+  </description>
+</property>
+```
+该参数默认值为minimal，表示运行“select * ”并带有limit查询时候，会将其转换为FetchTask；如果参数值为more，则select某一些列并带有limit条件时，也会将其转换为FetchTask任务。
 ## 动态partition
 ```
 hive.exec.dynamic.partition --开启动态partition
