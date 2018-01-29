@@ -80,16 +80,16 @@
     - 搜索目录下的所有文件：os.path.walk()
 
 - shutil模块对文件的操作
-    1. 复制单个文件：shultil.copy(oldfile, newfle)
-    2. 复制整个目录树：shultil.copytree(r".\setup", r".\backup") 
-    3. 删除整个目录树：shultil.rmtree(r".\backup")
+    - 复制单个文件：shultil.copy(oldfile, newfle)
+    - 复制整个目录树：shultil.copytree(r".\setup", r".\backup") 
+    - 删除整个目录树：shultil.rmtree(r".\backup")
 
 - 临时文件的操作
-    1. 创建一个唯一的临时文件：tempfile.mktemp() --> filename 
-    2. 打开临时文件：tempfile.TemporaryFile()
+    - 创建一个唯一的临时文件：tempfile.mktemp() --> filename 
+    - 打开临时文件：tempfile.TemporaryFile()
 
 - 内存文件（StringIO和cStringIO）操作 #cStringIO是StringIO模块的快速实现模块
-    1. 创建内存文件并写入初始数据：f = StringIO.StringIO("Hello world!") 
-    2. 读入内存文件数据：print f.read() #或print f.getvalue() --> Hello world!
-    3. 想内存文件写入数据：f.write("Good day!")
-    4. 关闭内存文件：f.close()
+    - 创建内存文件并写入初始数据：f = StringIO.StringIO("Hello world!") 
+    - 读入内存文件数据：print f.read() #或print f.getvalue() --> Hello world!
+    - 想内存文件写入数据：f.write("Good day!")
+    - 关闭内存文件：f.close()
