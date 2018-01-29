@@ -51,33 +51,33 @@
     pardir (当前工作目录的)父目录字符串名称 
 ```
 - os 模块操作
-    1. 重命名：os.rename(old, new)
-    2. 删除：os.remove(file)
-    3. 列出目录下的文件：os.listdir(path)
-    4. 获取当前工作目录：os.getcwd()
-    5. 改变工作目录：os.chdir(newdir)
-    6. 创建多级目录：os.makedirs(r"c:\python\test")
-    7. 创建单个目录：os.mkdir("test") 
-    8. 删除多个目录：os.removedirs(r"c:\python") #删除所给路径最后一个目录下所有空目录
-    9. 删除单个目录：os.rmdir("test")
-    10. 获取文件属性：os.stat(file)
-    11. 修改文件权限与时间戳：os.chmod(file) 
-    12. 执行操作系统命令：os.system("dir")
-    13. 启动新进程：os.exec(), os.execvp()
-    14. 在后台执行程序：osspawnv()
-    15. 终止当前进程：os.exit(), os._exit() 
-    16. 分离文件名：os.path.split(r"c:\python\hello.py") --> ("c:\\python", "hello.py")
-    17. 分离扩展名：os.path.splitext(r"c:\python\hello.py") --> ("c:\\python\\hello", ".py")
-    18. 获取路径名：os.path.dirname(r"c:\python\hello.py") --> "c:\\python"
-    19. 获取文件名：os.path.basename(r"r:\python\hello.py") --> "hello.py" 
-    20. 判断文件是否存在：os.path.exists(r"c:\python\hello.py") --> True 
-    21. 判断是否是绝对路径：os.path.isabs(r".\python\") --> False 
-    22. 判断是否是目录：os.path.isdir(r"c:\python") --> True 
-    23. 判断是否是文件：os.path.isfile(r"c:\python\hello.py") --> True 
-    24. 判断是否是链接文件：os.path.islink(r"c:\python\hello.py") --> False 
-    25. 获取文件大小：os.path.getsize(filename) 
-    26. *******：os.ismount("c:\\") --> True 
-    27. 搜索目录下的所有文件：os.path.walk()
+    - 重命名：os.rename(old, new)
+    - 删除：os.remove(file)
+    - 列出目录下的文件：os.listdir(path)
+    - 获取当前工作目录：os.getcwd()
+    - 改变工作目录：os.chdir(newdir)
+    - 创建多级目录：os.makedirs(r"c:\python\test")
+    - 创建单个目录：os.mkdir("test") 
+    - 删除多个目录：os.removedirs(r"c:\python") #删除所给路径最后一个目录下所有空目录
+    - 删除单个目录：os.rmdir("test")
+    - 获取文件属性：os.stat(file)
+    - 修改文件权限与时间戳：os.chmod(file) 
+    - 执行操作系统命令：os.system("dir")
+    - 启动新进程：os.exec(), os.execvp()
+    - 在后台执行程序：osspawnv()
+    - 终止当前进程：os.exit(), os._exit() 
+    - 分离文件名：os.path.split(r"c:\python\hello.py") --> ("c:\\python", "hello.py")
+    - 分离扩展名：os.path.splitext(r"c:\python\hello.py") --> ("c:\\python\\hello", ".py")
+    - 获取路径名：os.path.dirname(r"c:\python\hello.py") --> "c:\\python"
+    - 获取文件名：os.path.basename(r"r:\python\hello.py") --> "hello.py" 
+    - 判断文件是否存在：os.path.exists(r"c:\python\hello.py") --> True 
+    - 判断是否是绝对路径：os.path.isabs(r".\python\") --> False 
+    - 判断是否是目录：os.path.isdir(r"c:\python") --> True 
+    - 判断是否是文件：os.path.isfile(r"c:\python\hello.py") --> True 
+    - 判断是否是链接文件：os.path.islink(r"c:\python\hello.py") --> False 
+    - 获取文件大小：os.path.getsize(filename) 
+    - *******：os.ismount("c:\\") --> True 
+    - 搜索目录下的所有文件：os.path.walk()
 
 - shutil模块对文件的操作
     1. 复制单个文件：shultil.copy(oldfile, newfle)
