@@ -69,8 +69,6 @@
     4. workflow调度
         - edw_bi_email_pre/edw_bi_email
     
-
-
 ## 第三部分 钉钉BI
 - 发送机制：
     - 与邮件类似，分预发布和正式发布。
