@@ -22,7 +22,7 @@ socks5 = "127.0.0.1:49361" # lantern的地址
 ```
 
 ### iterm2 && oh-my-zsh
-- brew cask install item2
+- brew cask install iterm2
 - oh-my-zsh
 ```
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -33,10 +33,10 @@ ZSH_THEME="ys"
 ```
 
 ### 正式安装软件
-- brew cask sogouinput
-- brew cask google-chrome
-- brew cask iina
-- brew cask the-unarchiver
+- brew cask install sogouinput
+- brew cask install google-chrome
+- brew cask install iina
+- brew cask install the-unarchiver
 - brew cask install cheatsheet
 - brew cask isntall the-unarchiver
 - brew cask install cleanmymac
