@@ -37,8 +37,6 @@ ZSH_THEME="ys"
 - brew cask install google-chrome
 - brew cask install iina
 - brew cask install the-unarchiver
-- brew cask install cheatsheet
-- brew cask isntall the-unarchiver
 - brew cask install cleanmymac
 - brew cask install thunder
 - brew cask install atom
@@ -47,6 +45,7 @@ ZSH_THEME="ys"
 - brew cask install pycharm
 - brew cask install intellij-idea
 - brew cask install microsoft-office
+- brew cask install docker
 ### SSH
 ```
 ssh-keygen -t rsa -C lijiang
