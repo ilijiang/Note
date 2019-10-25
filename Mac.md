@@ -13,7 +13,7 @@ sudo /Applications/Install\ OS\ X\ Yosemite.app/Contents/Resources/createinstall
 ```
 
 ### Homebrew-cask
-- brew tap caskroom/cask
+- brew tap homebrew/cask
 
 ### 配置提速
 - 在~/.curlrc文件中输入代理地址即可。如果你的服务端速度够快的话，brew的下载速度简直就是飞起= =。
